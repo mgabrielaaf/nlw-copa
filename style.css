@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg: url(./assets/bgyellow.svg);
+    --card-bg-color: #1D1C19;
+    --card-color-primary: #F7DD43;
+    --card-title-color-border: #746615;
+}
+
+body.blue{
+    --bg: url(./assets/bgblue.svg);
+    --card-bg-color: #202024;
+    --card-color-primary: #0052B4;
+    --card-title-color-border: #338AF3;
+}
+
+body.green{
+    --bg: url(./assets/bggreen.svg);
+    --card-bg-color: #1A1F1B;
+    --card-color-primary: #6DA544;
+    --card-title-color-border: #047C3F;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-color: #121214;
+    background-repeat: no-repeat;
+    background-position: top center; 
+    background-image: var(--bg);
+}
+
+#app{
+    margin: auto;
+    padding-top: 52px;
+    width: fit-content;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 63px;
+}
+
+#cards{
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+.card{
+    
+    padding: 32px 23px;
+    text-align: center;
+    border-radius: 6px;
+    background: var(--card-bg-color);
+    border-bottom: 2px solid var(--card-color-primary);
+    animation: appear 1s;
+}
+
+.card h2{
+    gap: 16px;
+    display: flex;
+    color: #F7DD43;
+    padding: 8px 16px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 53px;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--card-title-color-border);
+}
+
+.card h2 span{
+    font-size: 14px;
+    color: #E1E1E6;
+    text-transform: uppercase;
+}
+
+ul{
+    list-style: none
+}
+
+.card ul{
+    display: flex;
+    width: 270px;
+    gap: 24px;
+    flex-direction: column;
+}
+
+.card ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card ul li + li{
+    padding-top: 24px;
+    border-top: 1px solid #323238;
+}
+
+.card ul li strong{
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 125%;
+    color: #E1E1E6;
+}
+
+.card h2:hover, .card ul li strong:hover, .card ul li img:hover{
+    transform: scale(1.1);
+}
+
+.card h2, .card ul li strong, .card ul li img{
+    transition: transform 0.3s;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media(min-width: 700px){
+    #cards{
+        flex-wrap: wrap;
+        max-width: 670px;
+        flex-direction: row;
+    }
+}
